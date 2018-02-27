@@ -1,3 +1,8 @@
 /*jshint esversion: 6 */
-module.exports.player = require("./lib/playercache.js");
-module.exports.tribe = require("./lib/tribecache.js");
+module.exports = function(settings) {
+	  var module = {};
+	  module.player = require("./lib/playercache.js")(settings);
+	  module.tribe = require("./lib/tribecache.js")(settings);
+	  
+	  return module;
+};
